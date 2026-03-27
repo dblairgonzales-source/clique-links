@@ -31,17 +31,17 @@ const socials = [
 const links = [
   {
     title: 'Class Pre-Registration',
-    href: 'https://forms.google.com/class-prereg', // Placeholder - update with actual form link
+    href: 'https://forms.gle/fBkYGjiQpgjgnhna7',
     icon: FileText,
   },
   {
     title: 'Studio Rentals',
-    href: 'https://forms.google.com/studio-rentals', // Placeholder - update with actual form link
+    href: 'https://forms.gle/LQZXg2oA32STRG38A',
     icon: Video,
   },
   {
     title: 'Class Footage',
-    href: 'https://drive.google.com/class-footage', // Placeholder - update with actual drive link
+    href: 'https://drive.google.com/drive/folders/1ndBLcz374d2ev2ou8EH7IePlhWcVldw3',
     icon: FolderOpen,
   },
 ]
