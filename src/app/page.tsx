@@ -71,7 +71,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 w-full max-w-md mx-auto px-6 py-12 flex flex-col items-center relative z-10">
         {/* Logo */}
-        <div className="relative w-96 h-96 rounded-2xl overflow-hidden">
+        <div className="relative w-96 h-96 rounded-2xl overflow-hidden pointer-events-none">
           <Image
             src="/logo.png"
             alt="Clique Studio Logo"
