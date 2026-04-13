@@ -163,9 +163,9 @@ export default function Home() {
                       background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%)',
                     }}
                   />
-                  <div className="relative flex items-center justify-center gap-3 py-4 px-6 font-medium text-base text-white/90 group-hover:text-white transition-colors">
+                  <div className="relative flex items-center justify-center py-2 px-4 font-medium text-base text-white/90 group-hover:text-white transition-colors">
                     {link.image ? (
-                      <div className="relative h-10 w-40">
+                      <div className="relative w-full h-14">
                         <Image
                           src={link.image}
                           alt={link.title}
