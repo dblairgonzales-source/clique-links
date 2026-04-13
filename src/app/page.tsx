@@ -1,6 +1,6 @@
 'use client'
 
-import { Instagram, Facebook, MapPin, FileText, Video, FolderOpen, Scroll, BookOpen } from 'lucide-react'
+import { Instagram, Facebook, MapPin, FileText, Video, FolderOpen, Scroll, BookOpen, HelpCircle } from 'lucide-react'
 import Image from 'next/image'
 
 // Custom TikTok Icon
@@ -29,6 +29,11 @@ const socials = [
 ]
 
 const links = [
+  {
+    title: 'FAQs',
+    href: 'https://docs.google.com/faqs',
+    icon: HelpCircle,
+  },
   {
     title: 'Class Pre-Registration',
     href: 'https://docs.google.com/forms/d/e/1FAIpQLSfCc_wl6-jLKubONJleb96NPFrNjew3M09_MigoBeG8MrD7FQ/viewform',
