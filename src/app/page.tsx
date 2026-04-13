@@ -1,6 +1,6 @@
 'use client'
 
-import { Instagram, Facebook, MapPin, FileText, Video, FolderOpen, Scroll, BookOpen, HelpCircle } from 'lucide-react'
+import { Instagram, Facebook, MapPin, FileText, Video, FolderOpen, Scroll, BookOpen, HelpCircle, Tag, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 
 // Custom TikTok Icon
@@ -45,6 +45,11 @@ const links = [
     icon: Video,
   },
   {
+    title: 'A10DANCE',
+    href: 'https://docs.google.com/a10dance',
+    icon: Sparkles,
+  },
+  {
     title: 'Class Footage',
     href: 'https://drive.google.com/drive/folders/1ndBLcz374d2ev2ou8EH7IePlhWcVldw3',
     icon: FolderOpen,
@@ -58,8 +63,8 @@ const halfButtons = [
     icon: Scroll,
   },
   {
-    title: 'Studio Guide',
-    href: 'https://docs.google.com/studio-guide',
+    title: 'Rates',
+    href: 'https://docs.google.com/rates',
     icon: BookOpen,
   },
 ]
@@ -230,6 +235,37 @@ export default function Home() {
                     {address.text}
                   </p>
                 </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        {/* VIP Pass */}
+        <div className="w-full mt-6">
+          <a
+            href="https://docs.google.com/vip-pass"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full group cursor-pointer"
+          >
+            <div
+              className="relative w-full rounded-2xl overflow-hidden transition-all duration-300 group-hover:scale-[1.02] backdrop-blur-xl"
+              style={{ 
+                background: 'linear-gradient(135deg, rgba(236, 184, 64, 0.05), rgba(212, 163, 58, 0.03))',
+                border: '1px solid rgba(236, 184, 64, 0.3)',
+                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+              }}
+            >
+              {/* Shine effect */}
+              <div 
+                className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%)',
+                }}
+              />
+              <div className="relative flex items-center justify-center gap-3 py-4 px-6 font-medium text-base text-white/90 group-hover:text-white transition-colors">
+                <Tag className="w-5 h-5 flex-shrink-0 text-[#ecb840]/80 group-hover:text-[#ecb840] transition-colors" />
+                <span>VIP Pass</span>
               </div>
             </div>
           </a>
