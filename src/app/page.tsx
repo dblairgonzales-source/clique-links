@@ -31,7 +31,7 @@ const socials = [
 const links = [
   {
     title: 'FAQs',
-    href: 'https://docs.google.com/faqs',
+    href: 'https://drive.google.com/file/d/1iN_8nc8AleCgkMLcUGEKXq71A5B6W4jx/view?usp=sharing',
     icon: HelpCircle,
   },
   {
@@ -46,7 +46,7 @@ const links = [
   },
   {
     title: 'A10DANCE',
-    href: 'https://docs.google.com/a10dance',
+    href: 'https://drive.google.com/file/d/1iN_8nc8AleCgkMLcUGEKXq71A5B6W4jx/view?usp=sharing',
     icon: Sparkles,
   },
   {
@@ -59,12 +59,12 @@ const links = [
 const halfButtons = [
   {
     title: 'House Rules',
-    href: 'https://docs.google.com/house-rules',
+    href: 'https://drive.google.com/file/d/1iN_8nc8AleCgkMLcUGEKXq71A5B6W4jx/view?usp=sharing',
     icon: Scroll,
   },
   {
     title: 'Rates',
-    href: 'https://docs.google.com/rates',
+    href: 'https://drive.google.com/file/d/1iN_8nc8AleCgkMLcUGEKXq71A5B6W4jx/view?usp=sharing',
     icon: BookOpen,
   },
 ]
@@ -243,7 +243,7 @@ export default function Home() {
         {/* VIP Pass */}
         <div className="w-full mt-6">
           <a
-            href="https://docs.google.com/vip-pass"
+            href="https://drive.google.com/file/d/1iN_8nc8AleCgkMLcUGEKXq71A5B6W4jx/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full group cursor-pointer"
