@@ -48,7 +48,6 @@ const links = [
     title: 'A10DANCE',
     href: 'https://docs.google.com/a10dance',
     icon: Sparkles,
-    image: '/a10dance.png',
   },
   {
     title: 'Class Footage',
@@ -163,23 +162,9 @@ export default function Home() {
                       background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%)',
                     }}
                   />
-                  <div className="relative flex items-center justify-center py-2 px-4 font-medium text-base text-white/90 group-hover:text-white transition-colors">
-                    {link.image ? (
-                      <div className="relative w-full h-14">
-                        <Image
-                          src={link.image}
-                          alt={link.title}
-                          fill
-                          className="object-contain object-center"
-                          priority
-                        />
-                      </div>
-                    ) : (
-                      <>
-                        <Icon className="w-5 h-5 flex-shrink-0 text-[#ecb840]/80 group-hover:text-[#ecb840] transition-colors" />
-                        <span>{link.title}</span>
-                      </>
-                    )}
+                  <div className="relative flex items-center justify-center gap-3 py-4 px-6 font-medium text-base text-white/90 group-hover:text-white transition-colors">
+                    <Icon className="w-5 h-5 flex-shrink-0 text-[#ecb840]/80 group-hover:text-[#ecb840] transition-colors" />
+                    <span>{link.title}</span>
                   </div>
                 </div>
               </a>
