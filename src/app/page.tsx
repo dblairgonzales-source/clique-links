@@ -165,12 +165,13 @@ export default function Home() {
                   />
                   <div className="relative flex items-center justify-center gap-3 py-4 px-6 font-medium text-base text-white/90 group-hover:text-white transition-colors">
                     {link.image ? (
-                      <div className="relative h-6 w-24">
+                      <div className="relative h-10 w-40">
                         <Image
                           src={link.image}
                           alt={link.title}
                           fill
                           className="object-contain object-center"
+                          priority
                         />
                       </div>
                     ) : (
