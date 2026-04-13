@@ -1,6 +1,6 @@
 'use client'
 
-import { Instagram, Facebook, MapPin, FileText, Video, FolderOpen } from 'lucide-react'
+import { Instagram, Facebook, MapPin, FileText, Video, FolderOpen, Scroll, BookOpen, HelpCircle, Tag, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 
 // Custom TikTok Icon
@@ -30,19 +30,42 @@ const socials = [
 
 const links = [
   {
+    title: 'FAQs',
+    href: 'https://docs.google.com/faqs',
+    icon: HelpCircle,
+  },
+  {
     title: 'Class Pre-Registration',
-    href: 'https://forms.gle/fBkYGjiQpgjgnhna7',
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLSfCc_wl6-jLKubONJleb96NPFrNjew3M09_MigoBeG8MrD7FQ/viewform',
     icon: FileText,
   },
   {
     title: 'Studio Rentals',
-    href: 'https://forms.gle/LQZXg2oA32STRG38A',
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLSdlh_KGD54tMnkLCCWlRYwIGIOIa-V7h4CjxXfB_qWArLhcAw/viewform',
     icon: Video,
+  },
+  {
+    title: 'A10DANCE',
+    href: 'https://docs.google.com/a10dance',
+    icon: Sparkles,
   },
   {
     title: 'Class Footage',
     href: 'https://drive.google.com/drive/folders/1ndBLcz374d2ev2ou8EH7IePlhWcVldw3',
     icon: FolderOpen,
+  },
+]
+
+const halfButtons = [
+  {
+    title: 'House Rules',
+    href: 'https://docs.google.com/house-rules',
+    icon: Scroll,
+  },
+  {
+    title: 'Rates',
+    href: 'https://docs.google.com/rates',
+    icon: BookOpen,
   },
 ]
 
@@ -149,6 +172,43 @@ export default function Home() {
           })}
         </div>
 
+        {/* Half-width Buttons */}
+        <div className="w-full flex gap-3 mt-3">
+          {halfButtons.map((button) => {
+            const Icon = button.icon
+            return (
+              <a
+                key={button.title}
+                href={button.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 group cursor-pointer"
+              >
+                <div
+                  className="relative w-full rounded-2xl overflow-hidden transition-all duration-300 group-hover:scale-[1.02] backdrop-blur-xl"
+                  style={{ 
+                    background: 'linear-gradient(135deg, rgba(236, 184, 64, 0.05), rgba(212, 163, 58, 0.03))',
+                    border: '1px solid rgba(236, 184, 64, 0.3)',
+                    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                  }}
+                >
+                  {/* Shine effect */}
+                  <div 
+                    className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%)',
+                    }}
+                  />
+                  <div className="relative flex flex-col items-center justify-center gap-2 py-4 px-4 font-medium text-sm text-white/90 group-hover:text-white transition-colors">
+                    <Icon className="w-5 h-5 text-[#ecb840]/80 group-hover:text-[#ecb840] transition-colors" />
+                    <span>{button.title}</span>
+                  </div>
+                </div>
+              </a>
+            )
+          })}
+        </div>
+
         {/* Location */}
         <div className="w-full mt-6">
           <a
@@ -175,6 +235,37 @@ export default function Home() {
                     {address.text}
                   </p>
                 </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        {/* VIP Pass */}
+        <div className="w-full mt-6">
+          <a
+            href="https://docs.google.com/vip-pass"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full group cursor-pointer"
+          >
+            <div
+              className="relative w-full rounded-2xl overflow-hidden transition-all duration-300 group-hover:scale-[1.02] backdrop-blur-xl"
+              style={{ 
+                background: 'linear-gradient(135deg, rgba(236, 184, 64, 0.05), rgba(212, 163, 58, 0.03))',
+                border: '1px solid rgba(236, 184, 64, 0.3)',
+                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+              }}
+            >
+              {/* Shine effect */}
+              <div 
+                className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%)',
+                }}
+              />
+              <div className="relative flex items-center justify-center gap-3 py-4 px-6 font-medium text-base text-white/90 group-hover:text-white transition-colors">
+                <Tag className="w-5 h-5 flex-shrink-0 text-[#ecb840]/80 group-hover:text-[#ecb840] transition-colors" />
+                <span>VIP Pass</span>
               </div>
             </div>
           </a>
