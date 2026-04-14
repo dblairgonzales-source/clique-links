@@ -31,7 +31,7 @@ const socials = [
 const links = [
   {
     title: 'FAQs',
-    href: 'https://drive.google.com/file/d/1iN_8nc8AleCgkMLcUGEKXq71A5B6W4jx/view?usp=sharing',
+    href: 'https://powerful-wormhole-95c.notion.site/Clique-Studio-FAQs-342448b8f60b800ebb2dd941505be647?pvs=73',
     icon: HelpCircle,
   },
   {
