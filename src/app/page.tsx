@@ -46,7 +46,7 @@ const links = [
   },
   {
     title: 'A10DANCE',
-    href: 'https://drive.google.com/file/d/1iN_8nc8AleCgkMLcUGEKXq71A5B6W4jx/view?usp=sharing',
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLScDnrYghM0qKVDNKbWdI6mShY3asU9J4n1DcJtaG1lD03Kb9g/viewform?usp=dialog',
     icon: Sparkles,
   },
   {
