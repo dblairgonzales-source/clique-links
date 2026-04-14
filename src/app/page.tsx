@@ -243,7 +243,7 @@ export default function Home() {
         {/* VIP Pass */}
         <div className="w-full mt-6">
           <a
-            href="https://drive.google.com/file/d/1iN_8nc8AleCgkMLcUGEKXq71A5B6W4jx/view?usp=sharing"
+            href="https://darylblairgonzales.my.canva.site/clique-studio-vip-pass"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full group cursor-pointer"
