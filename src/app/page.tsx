@@ -45,7 +45,7 @@ const links = [
     icon: Video,
   },
   {
-    title: 'A10DANCE',
+    title: 'A10DANCE Pre-Registration',
     href: 'https://docs.google.com/forms/d/e/1FAIpQLScDnrYghM0qKVDNKbWdI6mShY3asU9J4n1DcJtaG1lD03Kb9g/viewform?usp=dialog',
     icon: Sparkles,
   },
