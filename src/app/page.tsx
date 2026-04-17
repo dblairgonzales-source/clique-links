@@ -40,14 +40,14 @@ const links = [
     icon: FileText,
   },
   {
-    title: 'Studio Rentals',
-    href: 'https://docs.google.com/forms/d/e/1FAIpQLSdlh_KGD54tMnkLCCWlRYwIGIOIa-V7h4CjxXfB_qWArLhcAw/viewform',
-    icon: Video,
-  },
-  {
     title: 'A10DANCE Pre-Registration',
     href: 'https://docs.google.com/forms/d/e/1FAIpQLScDnrYghM0qKVDNKbWdI6mShY3asU9J4n1DcJtaG1lD03Kb9g/viewform?usp=dialog',
     icon: Sparkles,
+  },
+  {
+    title: 'Studio Rentals',
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLSdlh_KGD54tMnkLCCWlRYwIGIOIa-V7h4CjxXfB_qWArLhcAw/viewform',
+    icon: Video,
   },
   {
     title: 'Class Footage',
