@@ -59,12 +59,12 @@ const links = [
 const halfButtons = [
   {
     title: 'House Rules',
-    href: 'https://drive.google.com/file/d/1iN_8nc8AleCgkMLcUGEKXq71A5B6W4jx/view?usp=sharing',
+    href: 'https://canva.link/cliquestudios-house-rules',
     icon: Scroll,
   },
   {
     title: 'Rates',
-    href: 'https://drive.google.com/file/d/1iN_8nc8AleCgkMLcUGEKXq71A5B6W4jx/view?usp=sharing',
+    href: 'https://canva.link/cliquestudio-rates',
     icon: BookOpen,
   },
 ]
