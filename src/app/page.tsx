@@ -46,7 +46,7 @@ const links = [
   },
   {
     title: 'Studio Rentals',
-    href: 'https://docs.google.com/forms/d/e/1FAIpQLSdlh_KGD54tMnkLCCWlRYwIGIOIa-V7h4CjxXfB_qWArLhcAw/viewform',
+    href: 'https://clique-booking.vercel.app/',
     icon: Video,
   },
   {
