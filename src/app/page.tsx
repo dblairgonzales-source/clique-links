@@ -1,6 +1,6 @@
 'use client'
 
-import { Instagram, Facebook, MapPin, FileText, Video, FolderOpen, Scroll, BookOpen, HelpCircle, Tag, Sparkles, ExternalLink, Clock, Phone } from 'lucide-react'
+import { Instagram, Facebook, MapPin, FileText, Video, FolderOpen, Scroll, BookOpen, HelpCircle, Tag, Sparkles, ExternalLink, Clock, Calendar } from 'lucide-react'
 import Image from 'next/image'
 
 // Custom TikTok Icon
@@ -10,7 +10,7 @@ const TikTokIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
-// Primary CTAs - Most important actions
+// Primary CTAs - Registration forms
 const primaryLinks = [
   {
     title: 'Class Pre-Registration',
@@ -18,6 +18,19 @@ const primaryLinks = [
     href: 'https://docs.google.com/forms/d/e/1FAIpQLSfCc_wl6-jLKubONJleb96NPFrNjew3M09_MigoBeG8MrD7FQ/viewform',
     icon: FileText,
     badge: 'Popular',
+  },
+  {
+    title: 'A10DANCE',
+    description: 'Register for A10DANCE classes',
+    href: 'https://docs.google.com/a10dance',
+    icon: Sparkles,
+  },
+  {
+    title: 'EVENTS',
+    description: 'Sign up for upcoming events',
+    href: 'https://docs.google.com/events-placeholder',
+    icon: Calendar,
+    badge: 'New',
   },
   {
     title: 'Studio Rentals',
@@ -29,11 +42,6 @@ const primaryLinks = [
 
 // Secondary links - Standard actions
 const secondaryLinks = [
-  {
-    title: 'A10DANCE',
-    href: 'https://docs.google.com/a10dance',
-    icon: Sparkles,
-  },
   {
     title: 'Class Footage',
     href: 'https://drive.google.com/drive/folders/1ndBLcz374d2ev2ou8EH7IePlhWcVldw3',
@@ -97,12 +105,11 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 w-full relative z-10">
         {/* Hero Section */}
-        <section className="relative pt-12 pb-8 px-6 lg:pt-20 lg:pb-12">
+        <section className="relative pt-12 pb-8 px-6 lg:pt-16 lg:pb-10">
           <div className="max-w-lg mx-auto">
-            {/* Logo & Branding */}
+            {/* Logo */}
             <div className="flex flex-col items-center text-center fade-in-up">
-              {/* Logo Container */}
-              <div className="relative w-48 h-48 lg:w-56 lg:h-56 mb-6">
+              <div className="relative w-40 h-40 lg:w-48 lg:h-48 mb-6">
                 <div className="absolute inset-0 bg-[#ecb840]/10 rounded-full blur-3xl animate-pulse" />
                 <Image
                   src="/logo.png"
@@ -112,21 +119,20 @@ export default function Home() {
                   priority
                 />
               </div>
-              
-              {/* Brand Name */}
-              <h1 className="text-3xl lg:text-4xl font-bold tracking-tight mb-2 font-heading">
-                <span className="text-white">Clique</span>
-                <span className="text-[#ecb840]"> Studio</span>
-              </h1>
-              
-              {/* Tagline */}
-              <p className="text-gray-400 text-sm lg:text-base tracking-wide uppercase letter-spacing-wider">
-                Dance Studio & Creative Space
+            </div>
+
+            {/* Intro Text */}
+            <div className="text-center fade-in-up" style={{ animationDelay: '0.1s' }}>
+              <p className="text-gray-300 text-sm lg:text-base leading-relaxed max-w-md mx-auto">
+                A Dance Studio and Creative Space in Baguio, built for the community. Regular classes, open training, intensives, and events. Rooted in culture, designed to grow.
+              </p>
+              <p className="text-[#ecb840] text-sm lg:text-base font-medium mt-3">
+                Home of <span className="font-bold">10TATIVE</span>.
               </p>
             </div>
 
-            {/* Social Icons - With better contrast */}
-            <div className="flex items-center justify-center gap-5 mt-8 fade-in-up" style={{ animationDelay: '0.1s' }}>
+            {/* Social Icons */}
+            <div className="flex items-center justify-center gap-5 mt-8 fade-in-up" style={{ animationDelay: '0.15s' }}>
               {socials.map((social) => {
                 const Icon = social.icon
                 return (
@@ -139,9 +145,7 @@ export default function Home() {
                     className="group"
                   >
                     <div className="relative">
-                      {/* Glow effect */}
                       <div className="absolute inset-0 bg-[#ecb840]/30 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      {/* Icon container */}
                       <div 
                         className="relative w-12 h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
                         style={{ 
@@ -161,7 +165,7 @@ export default function Home() {
         </section>
 
         {/* VIP Pass - Hero Element */}
-        <section className="px-6 pb-8 fade-in-up" style={{ animationDelay: '0.15s' }}>
+        <section className="px-6 pb-6 fade-in-up" style={{ animationDelay: '0.2s' }}>
           <div className="max-w-lg mx-auto">
             <a
               href="https://docs.google.com/vip-pass"
@@ -176,21 +180,20 @@ export default function Home() {
                   boxShadow: '0 10px 40px rgba(236, 184, 64, 0.3), 0 0 0 1px rgba(236, 184, 64, 0.5)',
                 }}
               >
-                {/* Shine animation */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 
-                <div className="relative p-5 lg:p-6 flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-black/20 flex items-center justify-center backdrop-blur-sm">
-                      <Tag className="w-6 h-6 text-white" />
+                <div className="relative p-4 lg:p-5 flex items-center justify-between">
+                  <div className="flex items-center gap-3 lg:gap-4">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-black/20 flex items-center justify-center backdrop-blur-sm">
+                      <Tag className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-lg lg:text-xl font-bold text-black">VIP Pass</h3>
-                      <p className="text-sm text-black/70">Unlock exclusive perks & discounts</p>
+                      <h3 className="text-base lg:text-lg font-bold text-black">VIP Pass</h3>
+                      <p className="text-xs lg:text-sm text-black/70">Unlock exclusive perks & discounts</p>
                     </div>
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-colors">
-                    <ExternalLink className="w-5 h-5 text-black" />
+                  <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+                    <ExternalLink className="w-4 h-4 lg:w-5 lg:h-5 text-black" />
                   </div>
                 </div>
               </div>
@@ -198,8 +201,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Primary CTAs */}
-        <section className="px-6 pb-6 fade-in-up" style={{ animationDelay: '0.2s' }}>
+        {/* Primary CTAs - Registration Forms */}
+        <section className="px-6 pb-6 fade-in-up" style={{ animationDelay: '0.25s' }}>
           <div className="max-w-lg mx-auto space-y-3">
             {primaryLinks.map((link) => {
               const Icon = link.icon
@@ -219,13 +222,13 @@ export default function Home() {
                       boxShadow: '0 4px 24px rgba(0, 0, 0, 0.4)',
                     }}
                   >
-                    <div className="p-5 flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-[#ecb840]/20 flex items-center justify-center group-hover:bg-[#ecb840]/30 transition-colors">
-                        <Icon className="w-6 h-6 text-[#ecb840]" />
+                    <div className="p-4 lg:p-5 flex items-center gap-3 lg:gap-4">
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-[#ecb840]/20 flex items-center justify-center group-hover:bg-[#ecb840]/30 transition-colors flex-shrink-0">
+                        <Icon className="w-5 h-5 lg:w-6 lg:h-6 text-[#ecb840]" />
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <h3 className="text-lg font-semibold text-white group-hover:text-[#ecb840] transition-colors">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <h3 className="text-base lg:text-lg font-semibold text-white group-hover:text-[#ecb840] transition-colors">
                             {link.title}
                           </h3>
                           {link.badge && (
@@ -235,10 +238,10 @@ export default function Home() {
                           )}
                         </div>
                         {link.description && (
-                          <p className="text-sm text-gray-400 mt-0.5">{link.description}</p>
+                          <p className="text-xs lg:text-sm text-gray-400 mt-0.5 truncate">{link.description}</p>
                         )}
                       </div>
-                      <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                      <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors flex-shrink-0">
                         <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                       </div>
                     </div>
@@ -250,9 +253,9 @@ export default function Home() {
         </section>
 
         {/* Secondary Links Grid */}
-        <section className="px-6 pb-6 fade-in-up" style={{ animationDelay: '0.25s' }}>
+        <section className="px-6 pb-6 fade-in-up" style={{ animationDelay: '0.3s' }}>
           <div className="max-w-lg mx-auto">
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 gap-3">
               {secondaryLinks.map((link) => {
                 const Icon = link.icon
                 return (
@@ -264,7 +267,7 @@ export default function Home() {
                     className="block group"
                   >
                     <div 
-                      className="relative overflow-hidden rounded-xl transition-all duration-300 group-hover:scale-[1.03]"
+                      className="relative overflow-hidden rounded-xl transition-all duration-300 group-hover:scale-[1.03] h-full"
                       style={{
                         background: 'rgba(255, 255, 255, 0.03)',
                         border: '1px solid rgba(255, 255, 255, 0.08)',
@@ -293,7 +296,7 @@ export default function Home() {
         </div>
 
         {/* Location Card */}
-        <section className="px-6 pb-6 fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <section className="px-6 pb-6 fade-in-up" style={{ animationDelay: '0.35s' }}>
           <div className="max-w-lg mx-auto">
             <a
               href={address.mapsUrl}
@@ -309,7 +312,6 @@ export default function Home() {
                   boxShadow: '0 4px 24px rgba(0, 0, 0, 0.4)',
                 }}
               >
-                {/* Map pattern overlay */}
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{
                     backgroundImage: `
@@ -320,28 +322,25 @@ export default function Home() {
                   }} />
                 </div>
                 
-                <div className="relative p-5">
-                  <div className="flex items-start gap-4">
-                    {/* Map Pin Icon */}
-                    <div className="w-14 h-14 rounded-xl bg-[#ecb840]/15 flex items-center justify-center flex-shrink-0 group-hover:bg-[#ecb840]/25 transition-colors">
-                      <MapPin className="w-7 h-7 text-[#ecb840] group-hover:animate-bounce" />
+                <div className="relative p-4 lg:p-5">
+                  <div className="flex items-start gap-3 lg:gap-4">
+                    <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-[#ecb840]/15 flex items-center justify-center flex-shrink-0 group-hover:bg-[#ecb840]/25 transition-colors">
+                      <MapPin className="w-6 h-6 lg:w-7 lg:h-7 text-[#ecb840] group-hover:animate-bounce" />
                     </div>
                     
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h3 className="text-base font-semibold text-[#ecb840]">Visit Our Studio</h3>
-                      </div>
-                      <p className="text-sm text-gray-400 leading-relaxed">
+                      <h3 className="text-sm lg:text-base font-semibold text-[#ecb840] mb-1">Visit Our Studio</h3>
+                      <p className="text-xs lg:text-sm text-gray-400 leading-relaxed">
                         {address.text}
                       </p>
-                      <div className="flex items-center gap-2 mt-3 text-xs text-gray-500">
+                      <div className="flex items-center gap-2 mt-2 text-xs text-gray-500">
                         <Clock className="w-3.5 h-3.5" />
                         <span>Tap to get directions</span>
                       </div>
                     </div>
                     
-                    <div className="w-10 h-10 rounded-full bg-[#ecb840]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#ecb840]/20 transition-colors">
-                      <ExternalLink className="w-4 h-4 text-[#ecb840]" />
+                    <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-[#ecb840]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#ecb840]/20 transition-colors">
+                      <ExternalLink className="w-4 h-4 lg:w-5 lg:h-5 text-[#ecb840]" />
                     </div>
                   </div>
                 </div>
@@ -351,7 +350,7 @@ export default function Home() {
         </section>
 
         {/* Tertiary Links - House Rules & Rates */}
-        <section className="px-6 pb-8 fade-in-up" style={{ animationDelay: '0.35s' }}>
+        <section className="px-6 pb-8 fade-in-up" style={{ animationDelay: '0.4s' }}>
           <div className="max-w-lg mx-auto">
             <div className="flex gap-3">
               {tertiaryLinks.map((link) => {
@@ -371,9 +370,9 @@ export default function Home() {
                         border: '1px solid rgba(255, 255, 255, 0.06)',
                       }}
                     >
-                      <div className="p-4 flex items-center justify-center gap-2">
+                      <div className="p-3 lg:p-4 flex items-center justify-center gap-2">
                         <Icon className="w-4 h-4 text-gray-500 group-hover:text-gray-400 transition-colors" />
-                        <span className="text-sm text-gray-500 group-hover:text-gray-300 transition-colors">
+                        <span className="text-xs lg:text-sm text-gray-500 group-hover:text-gray-300 transition-colors">
                           {link.title}
                         </span>
                       </div>
