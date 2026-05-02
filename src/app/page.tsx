@@ -106,10 +106,10 @@ export default function Home() {
       <main className="flex-1 w-full relative z-10">
         {/* Hero Section */}
         <section className="relative pt-12 pb-8 px-6 lg:pt-16 lg:pb-10">
-          <div className="max-w-lg mx-auto">
+          <div className="max-w-xl mx-auto">
             {/* Logo */}
             <div className="flex flex-col items-center text-center fade-in-up">
-              <div className="relative w-56 h-56 lg:w-64 lg:h-64 mb-2">
+              <div className="relative w-80 h-80 lg:w-[28rem] lg:h-[28rem] mb-2">
                 <div className="absolute inset-0 bg-[#ecb840]/10 rounded-full blur-3xl animate-pulse" />
                 <Image
                   src="/logo.png"
@@ -166,7 +166,7 @@ export default function Home() {
 
         {/* VIP Pass - Hero Element */}
         <section className="px-6 pb-6 fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <div className="max-w-lg mx-auto">
+          <div className="max-w-xl mx-auto">
             <a
               href="https://docs.google.com/vip-pass"
               target="_blank"
@@ -203,7 +203,7 @@ export default function Home() {
 
         {/* Primary CTAs - Registration Forms */}
         <section className="px-6 pb-6 fade-in-up" style={{ animationDelay: '0.25s' }}>
-          <div className="max-w-lg mx-auto space-y-3">
+          <div className="max-w-xl mx-auto space-y-3">
             {primaryLinks.map((link) => {
               const Icon = link.icon
               return (
@@ -254,7 +254,7 @@ export default function Home() {
 
         {/* Secondary Links Grid */}
         <section className="px-6 pb-6 fade-in-up" style={{ animationDelay: '0.3s' }}>
-          <div className="max-w-lg mx-auto">
+          <div className="max-w-xl mx-auto">
             <div className="grid grid-cols-2 gap-3">
               {secondaryLinks.map((link) => {
                 const Icon = link.icon
@@ -291,13 +291,13 @@ export default function Home() {
         </section>
 
         {/* Divider */}
-        <div className="max-w-lg mx-auto px-6 pb-6">
+        <div className="max-w-xl mx-auto px-6 pb-6">
           <div className="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
         </div>
 
         {/* Location Card */}
         <section className="px-6 pb-6 fade-in-up" style={{ animationDelay: '0.35s' }}>
-          <div className="max-w-lg mx-auto">
+          <div className="max-w-xl mx-auto">
             <a
               href={address.mapsUrl}
               target="_blank"
@@ -351,7 +351,7 @@ export default function Home() {
 
         {/* Tertiary Links - House Rules & Rates */}
         <section className="px-6 pb-8 fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <div className="max-w-lg mx-auto">
+          <div className="max-w-xl mx-auto">
             <div className="flex gap-3">
               {tertiaryLinks.map((link) => {
                 const Icon = link.icon
@@ -387,7 +387,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="relative z-10 py-6 px-6 border-t border-gray-800/30">
-        <div className="max-w-lg mx-auto text-center">
+        <div className="max-w-xl mx-auto text-center">
           <p className="text-xs text-gray-600">
             © {new Date().getFullYear()} Clique Studio. All rights reserved.
           </p>
