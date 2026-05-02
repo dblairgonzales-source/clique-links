@@ -25,8 +25,8 @@ const primaryLinks = [
     icon: Sparkles,
   },
   {
-    title: 'PRODUCT10N',
-    description: 'Sign up here for PRODCUT10N class bundles. For single class, please proceed to Class Pre-reg',
+    title: 'PRODUCT10N Class Bundles',
+    description: 'For single class, please proceed to Class Pre-reg',
     href: 'https://docs.google.com/forms/d/e/1FAIpQLScTKetr9TM7ZgFsE_OWLPh_fSMELFNF--vZ5cHdbJI8vhGj2A/viewform?usp=dialog',
     icon: Calendar,
   },
