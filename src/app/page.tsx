@@ -21,7 +21,7 @@ const primaryLinks = [
   {
     title: 'A10DANCE',
     description: 'Register for A10DANCE classes',
-    href: 'https://docs.google.com/a10dance',
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLScDnrYghM0qKVDNKbWdI6mShY3asU9J4n1DcJtaG1lD03Kb9g/viewform?usp=dialog',
     icon: Sparkles,
   },
   {
@@ -33,7 +33,7 @@ const primaryLinks = [
   {
     title: 'Studio Rentals',
     description: 'Reserve our space for your next event',
-    href: 'https://docs.google.com/forms/d/e/1FAIpQLSdlh_KGD54tMnkLCCWlRYwIGIOIa-V7h4CjxXfB_qWArLhcAw/viewform',
+    href: 'https://clique-booking.vercel.app/',
     icon: Video,
   },
 ]
@@ -47,7 +47,7 @@ const secondaryLinks = [
   },
   {
     title: 'FAQs',
-    href: 'https://docs.google.com/faqs',
+    href: 'https://powerful-wormhole-95c.notion.site/Clique-Studio-FAQs-342448b8f60b800ebb2dd941505be647?pvs=73',
     icon: HelpCircle,
   },
 ]
@@ -56,12 +56,12 @@ const secondaryLinks = [
 const tertiaryLinks = [
   {
     title: 'House Rules',
-    href: 'https://docs.google.com/house-rules',
+    href: 'https://canva.link/cliquestudios-house-rules',
     icon: Scroll,
   },
   {
     title: 'Rates',
-    href: 'https://docs.google.com/rates',
+    href: 'https://canva.link/cliquestudio-rates',
     icon: BookOpen,
   },
 ]
@@ -166,7 +166,7 @@ export default function Home() {
         <section className="px-6 pb-6 fade-in-up" style={{ animationDelay: '0.2s' }}>
           <div className="max-w-xl mx-auto">
             <a
-              href="https://docs.google.com/vip-pass"
+              href="https://darylblairgonzales.my.canva.site/clique-studio-vip-pass"
               target="_blank"
               rel="noopener noreferrer"
               className="block group"
