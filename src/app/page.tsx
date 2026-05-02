@@ -25,8 +25,8 @@ const primaryLinks = [
     icon: Sparkles,
   },
   {
-    title: 'EVENTS',
-    description: 'Sign up for upcoming events',
+    title: 'PRODUCT10N',
+    description: 'Sign up for PRODCUT10N classes',
     href: 'https://docs.google.com/events-placeholder',
     icon: Calendar,
   },
