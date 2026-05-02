@@ -7,17 +7,17 @@ import { Toaster } from "@/components/ui/toaster";
 const overusedGrotesk = localFont({
   src: [
     {
-      path: "../../public/fonts/OverusedGrotesk-Regular.ttf",
+      path: "../../public/fonts/OverusedGrotesk-Roman-BF64eeac18184a5.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/OverusedGrotesk-Medium.ttf",
+      path: "../../public/fonts/OverusedGrotesk-Medium-BF64eeac18163be.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../public/fonts/OverusedGrotesk-Bold.ttf",
+      path: "../../public/fonts/OverusedGrotesk-Bold-BF64eeac17f1b7f.ttf",
       weight: "700",
       style: "normal",
     },
