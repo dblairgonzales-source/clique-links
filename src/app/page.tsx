@@ -76,10 +76,10 @@ const address = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#050301] text-white relative">
-      {/* Background Image */}
+    <div className="min-h-screen flex flex-col bg-[#050301] text-white relative overflow-hidden">
+      {/* Animated Background Image */}
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 transition-transform duration-[20s] hover:scale-105"
         style={{ 
           backgroundImage: 'url(/bg-pattern.png)',
           backgroundSize: 'cover',
@@ -88,13 +88,21 @@ export default function Home() {
         }}
       />
       
+      {/* Floating Particles */}
+      <div className="particle particle-1" />
+      <div className="particle particle-2" />
+      <div className="particle particle-3" />
+      <div className="particle particle-4" />
+      <div className="particle particle-5" />
+      <div className="particle particle-6" />
+      
       {/* Dark overlay for better readability */}
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#050301]/80 via-[#050301]/60 to-[#050301]/90" />
 
       {/* Main Content */}
       <main className="flex-1 w-full max-w-md mx-auto px-6 py-12 flex flex-col items-center relative z-10">
         {/* Logo */}
-        <div className="relative w-96 h-96 rounded-2xl overflow-hidden pointer-events-none">
+        <div className="relative w-96 h-96 rounded-2xl overflow-hidden pointer-events-none fade-in-up logo-pulse">
           <Image
             src="/logo.png"
             alt="Clique Studio Logo"
@@ -105,10 +113,10 @@ export default function Home() {
         </div>
 
         {/* Tagline */}
-        <p className="text-gray-400 text-sm text-center tracking-wide -mt-20">Dance Studio & Creative Space</p>
+        <p className="text-gray-400 text-sm text-center tracking-wide -mt-20 fade-in-up fade-in-up-delay-1">Dance Studio & Creative Space</p>
 
         {/* Social Icons */}
-        <div className="flex items-center justify-center gap-4 mt-6 mb-8">
+        <div className="flex items-center justify-center gap-4 mt-6 mb-8 fade-in-up fade-in-up-delay-2">
           {socials.map((social) => {
             const Icon = social.icon
             return (
@@ -118,17 +126,17 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={social.title}
-                className="group cursor-pointer"
+                className="group cursor-pointer social-pulse"
               >
                 <div 
-                  className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                  className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 border-glow-animate"
                   style={{ 
                     background: 'rgba(30, 30, 30, 0.8)',
                     border: '1px solid rgba(236, 184, 64, 0.2)',
                     boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
                   }}
                 >
-                  <Icon className="w-5 h-5 text-gray-400 group-hover:text-[#ecb840] transition-colors" />
+                  <Icon className="w-5 h-5 text-gray-400 group-hover:text-[#ecb840] transition-all duration-300 group-hover:scale-110" />
                 </div>
               </a>
             )
@@ -136,8 +144,8 @@ export default function Home() {
         </div>
 
         {/* Main Links */}
-        <div className="w-full space-y-3">
-          {links.map((link) => {
+        <div className="w-full space-y-3 fade-in-up fade-in-up-delay-3">
+          {links.map((link, index) => {
             const Icon = link.icon
             return (
               <a
@@ -146,9 +154,10 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full group cursor-pointer"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div
-                  className="relative w-full rounded-2xl overflow-hidden transition-all duration-300 group-hover:scale-[1.02] backdrop-blur-xl"
+                  className="relative w-full rounded-2xl overflow-hidden transition-all duration-300 group-hover:scale-[1.02] backdrop-blur-xl btn-glow btn-shimmer"
                   style={{ 
                     background: 'linear-gradient(135deg, rgba(236, 184, 64, 0.05), rgba(212, 163, 58, 0.03))',
                     border: '1px solid rgba(236, 184, 64, 0.3)',
@@ -157,14 +166,14 @@ export default function Home() {
                 >
                   {/* Shine effect */}
                   <div 
-                    className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity"
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     style={{
-                      background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%)',
+                      background: 'radial-gradient(circle at center, rgba(236, 184, 64, 0.1) 0%, transparent 70%)',
                     }}
                   />
-                  <div className="relative flex items-center justify-center gap-3 py-4 px-6 font-medium text-base text-white/90 group-hover:text-white transition-colors">
-                    <Icon className="w-5 h-5 flex-shrink-0 text-[#ecb840]/80 group-hover:text-[#ecb840] transition-colors" />
-                    <span>{link.title}</span>
+                  <div className="relative flex items-center justify-center gap-3 py-4 px-6 font-medium text-base text-white/90 group-hover:text-white transition-all duration-300">
+                    <Icon className="w-5 h-5 flex-shrink-0 text-[#ecb840]/80 group-hover:text-[#ecb840] transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />
+                    <span className="group-hover:tracking-wider transition-all duration-300">{link.title}</span>
                   </div>
                 </div>
               </a>
@@ -173,7 +182,7 @@ export default function Home() {
         </div>
 
         {/* Half-width Buttons */}
-        <div className="w-full flex gap-3 mt-3">
+        <div className="w-full flex gap-3 mt-3 fade-in-up fade-in-up-delay-4">
           {halfButtons.map((button) => {
             const Icon = button.icon
             return (
@@ -185,7 +194,7 @@ export default function Home() {
                 className="flex-1 group cursor-pointer"
               >
                 <div
-                  className="relative w-full rounded-2xl overflow-hidden transition-all duration-300 group-hover:scale-[1.02] backdrop-blur-xl"
+                  className="relative w-full rounded-2xl overflow-hidden transition-all duration-300 group-hover:scale-[1.02] backdrop-blur-xl btn-glow btn-shimmer"
                   style={{ 
                     background: 'linear-gradient(135deg, rgba(236, 184, 64, 0.05), rgba(212, 163, 58, 0.03))',
                     border: '1px solid rgba(236, 184, 64, 0.3)',
@@ -194,14 +203,14 @@ export default function Home() {
                 >
                   {/* Shine effect */}
                   <div 
-                    className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity"
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     style={{
-                      background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%)',
+                      background: 'radial-gradient(circle at center, rgba(236, 184, 64, 0.1) 0%, transparent 70%)',
                     }}
                   />
-                  <div className="relative flex flex-col items-center justify-center gap-2 py-4 px-4 font-medium text-sm text-white/90 group-hover:text-white transition-colors">
-                    <Icon className="w-5 h-5 text-[#ecb840]/80 group-hover:text-[#ecb840] transition-colors" />
-                    <span>{button.title}</span>
+                  <div className="relative flex flex-col items-center justify-center gap-2 py-4 px-4 font-medium text-sm text-white/90 group-hover:text-white transition-all duration-300">
+                    <Icon className="w-5 h-5 text-[#ecb840]/80 group-hover:text-[#ecb840] transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />
+                    <span className="group-hover:tracking-wider transition-all duration-300">{button.title}</span>
                   </div>
                 </div>
               </a>
@@ -210,7 +219,7 @@ export default function Home() {
         </div>
 
         {/* Location */}
-        <div className="w-full mt-6">
+        <div className="w-full mt-6 fade-in-up fade-in-up-delay-5">
           <a
             href={address.mapsUrl}
             target="_blank"
@@ -218,7 +227,7 @@ export default function Home() {
             className="block w-full group"
           >
             <div 
-              className="rounded-2xl p-4 transition-all duration-300 group-hover:scale-[1.02] backdrop-blur-xl"
+              className="rounded-2xl p-4 transition-all duration-300 group-hover:scale-[1.02] backdrop-blur-xl btn-glow"
               style={{ 
                 background: 'rgba(5, 3, 1, 0.8)',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -226,11 +235,11 @@ export default function Home() {
               }}
             >
               <div className="flex items-start gap-3">
-                <div className="p-2 bg-[#ecb840]/20 rounded-lg group-hover:bg-[#ecb840]/30 transition-colors backdrop-blur-sm">
-                  <MapPin className="w-5 h-5 text-[#ecb840]" />
+                <div className="p-2 bg-[#ecb840]/20 rounded-lg group-hover:bg-[#ecb840]/30 transition-all duration-300 backdrop-blur-sm group-hover:scale-110">
+                  <MapPin className="w-5 h-5 text-[#ecb840] group-hover:animate-bounce" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-[#ecb840]/90 mb-1">Our Location</p>
+                  <p className="text-sm font-medium text-[#ecb840]/90 mb-1 group-hover:text-[#ecb840] transition-colors">Our Location</p>
                   <p className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
                     {address.text}
                   </p>
@@ -241,7 +250,7 @@ export default function Home() {
         </div>
 
         {/* VIP Pass */}
-        <div className="w-full mt-6">
+        <div className="w-full mt-6 fade-in-up fade-in-up-delay-5">
           <a
             href="https://docs.google.com/vip-pass"
             target="_blank"
@@ -249,7 +258,7 @@ export default function Home() {
             className="block w-full group cursor-pointer"
           >
             <div
-              className="relative w-full rounded-2xl overflow-hidden transition-all duration-300 group-hover:scale-[1.02] backdrop-blur-xl"
+              className="relative w-full rounded-2xl overflow-hidden transition-all duration-300 group-hover:scale-[1.02] backdrop-blur-xl btn-glow btn-shimmer border-glow-animate"
               style={{ 
                 background: 'linear-gradient(135deg, rgba(236, 184, 64, 0.05), rgba(212, 163, 58, 0.03))',
                 border: '1px solid rgba(236, 184, 64, 0.3)',
@@ -258,14 +267,14 @@ export default function Home() {
             >
               {/* Shine effect */}
               <div 
-                className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity"
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%)',
+                  background: 'radial-gradient(circle at center, rgba(236, 184, 64, 0.1) 0%, transparent 70%)',
                 }}
               />
-              <div className="relative flex items-center justify-center gap-3 py-4 px-6 font-medium text-base text-white/90 group-hover:text-white transition-colors">
-                <Tag className="w-5 h-5 flex-shrink-0 text-[#ecb840]/80 group-hover:text-[#ecb840] transition-colors" />
-                <span>VIP Pass</span>
+              <div className="relative flex items-center justify-center gap-3 py-4 px-6 font-medium text-base text-white/90 group-hover:text-white transition-all duration-300">
+                <Tag className="w-5 h-5 flex-shrink-0 text-[#ecb840]/80 group-hover:text-[#ecb840] transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />
+                <span className="group-hover:tracking-wider transition-all duration-300">VIP Pass</span>
               </div>
             </div>
           </a>
