@@ -30,17 +30,22 @@ const overusedGrotesk = localFont({
 const creatoDisplay = localFont({
   src: [
     {
-      path: "../../public/fonts/CreatoDisplay-Regular.ttf",
+      path: "../../public/fonts/CreatoDisplay-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/CreatoDisplay-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/CreatoDisplay-Medium.ttf",
+      path: "../../public/fonts/CreatoDisplay-Medium.otf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../public/fonts/CreatoDisplay-Bold.ttf",
+      path: "../../public/fonts/CreatoDisplay-Bold.otf",
       weight: "700",
       style: "normal",
     },
