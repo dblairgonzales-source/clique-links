@@ -109,7 +109,7 @@ export default function Home() {
           <div className="max-w-lg mx-auto">
             {/* Logo */}
             <div className="flex flex-col items-center text-center fade-in-up">
-              <div className="relative w-40 h-40 lg:w-48 lg:h-48 mb-6">
+              <div className="relative w-56 h-56 lg:w-64 lg:h-64 mb-2">
                 <div className="absolute inset-0 bg-[#ecb840]/10 rounded-full blur-3xl animate-pulse" />
                 <Image
                   src="/logo.png"
@@ -122,7 +122,7 @@ export default function Home() {
             </div>
 
             {/* Intro Text */}
-            <div className="text-center fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <div className="text-center fade-in-up mt-2" style={{ animationDelay: '0.1s' }}>
               <p className="text-gray-300 text-sm lg:text-base leading-relaxed max-w-md mx-auto">
                 A Dance Studio and Creative Space in Baguio, built for the community. Regular classes, open training, intensives, and events. Rooted in culture, designed to grow.
               </p>
