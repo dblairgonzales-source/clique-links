@@ -1,6 +1,7 @@
 'use client'
 
-import { Instagram, Facebook, MapPin, FileText, Video, FolderOpen, Scroll, BookOpen, HelpCircle, Tag, Sparkles, ExternalLink, Clock, Calendar } from 'lucide-react'
+import { useState } from 'react'
+import { Instagram, Facebook, MapPin, FileText, Video, FolderOpen, Scroll, BookOpen, HelpCircle, Tag, Sparkles, ExternalLink, Clock, Calendar, ShoppingBag, X, Shirt } from 'lucide-react'
 import Image from 'next/image'
 
 // Custom TikTok Icon
@@ -21,20 +22,39 @@ const primaryLinks = [
   {
     title: 'A10DANCE',
     description: 'Register for A10DANCE classes',
-    href: 'https://docs.google.com/forms/d/e/1FAIpQLScDnrYghM0qKVDNKbWdI6mShY3asU9J4n1DcJtaG1lD03Kb9g/viewform?usp=dialog',
+    href: 'https://docs.google.com/a10dance',
     icon: Sparkles,
   },
   {
-    title: 'PRODUCT10N',
-    description: 'Register for PRODUCT10N classes',
-    href: 'https://docs.google.com/forms/d/e/1FAIpQLScTKetr9TM7ZgFsE_OWLPh_fSMELFNF--vZ5cHdbJI8vhGj2A/viewform?usp=dialog',
+    title: 'EVENTS',
+    description: 'Sign up for upcoming events',
+    href: 'https://docs.google.com/events-placeholder',
     icon: Calendar,
   },
   {
     title: 'Studio Rentals',
     description: 'Reserve our space for your next event',
-    href: 'https://clique-booking.vercel.app/',
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLSdlh_KGD54tMnkLCCWlRYwIGIOIa-V7h4CjxXfB_qWArLhcAw/viewform',
     icon: Video,
+  },
+]
+
+// Merch items for modal
+const merchItems = [
+  {
+    title: 'Clique Shirt',
+    description: 'Get the official Clique Studio tee',
+    href: 'https://docs.google.com/merch-clique-shirt',
+  },
+  {
+    title: 'Coming Soon',
+    description: 'New drop incoming',
+    href: 'https://docs.google.com/merch-drop-2',
+  },
+  {
+    title: 'Coming Soon',
+    description: 'New drop incoming',
+    href: 'https://docs.google.com/merch-drop-3',
   },
 ]
 
@@ -47,7 +67,7 @@ const secondaryLinks = [
   },
   {
     title: 'FAQs',
-    href: 'https://powerful-wormhole-95c.notion.site/Clique-Studio-FAQs-342448b8f60b800ebb2dd941505be647?pvs=73',
+    href: 'https://docs.google.com/faqs',
     icon: HelpCircle,
   },
 ]
@@ -56,12 +76,12 @@ const secondaryLinks = [
 const tertiaryLinks = [
   {
     title: 'House Rules',
-    href: 'https://canva.link/cliquestudios-house-rules',
+    href: 'https://docs.google.com/house-rules',
     icon: Scroll,
   },
   {
     title: 'Rates',
-    href: 'https://canva.link/cliquestudio-rates',
+    href: 'https://docs.google.com/rates',
     icon: BookOpen,
   },
 ]
@@ -77,7 +97,95 @@ const address = {
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('2nd Floor, Curamed Building, 12 Aspiras - Palispis Hwy, Baguio, 2600 Benguet'),
 }
 
+// Merch Modal Component
+function MerchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  if (!isOpen) return null
+
+  return (
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      {/* Backdrop */}
+      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+      
+      {/* Modal */}
+      <div 
+        className="relative w-full max-w-md rounded-2xl overflow-hidden fade-in-up"
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          background: 'linear-gradient(135deg, rgba(30, 30, 30, 0.95), rgba(15, 15, 15, 0.98))',
+          border: '1px solid rgba(236, 184, 64, 0.3)',
+          boxShadow: '0 25px 50px rgba(0, 0, 0, 0.5), 0 0 50px rgba(236, 184, 64, 0.1)',
+        }}
+      >
+        {/* Header */}
+        <div className="relative p-6 pb-4 border-b border-gray-800/50">
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors"
+          >
+            <X className="w-4 h-4 text-gray-400" />
+          </button>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-[#ecb840]/20 flex items-center justify-center">
+              <ShoppingBag className="w-5 h-5 text-[#ecb840]" />
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-white">Clique Merch</h2>
+              <p className="text-sm text-gray-400">Official merchandise store</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Merch Items */}
+        <div className="p-6 space-y-3">
+          {merchItems.map((item, index) => (
+            <a
+              key={index}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block group"
+            >
+              <div 
+                className="relative overflow-hidden rounded-xl transition-all duration-300 group-hover:scale-[1.02]"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  border: '1px solid rgba(236, 184, 64, 0.3)',
+                }}
+              >
+                <div className="p-4 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-[#ecb840]/20 flex items-center justify-center group-hover:bg-[#ecb840]/30 transition-colors">
+                    <Shirt className="w-5 h-5 text-[#ecb840]" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-sm font-semibold text-white group-hover:text-[#ecb840] transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-gray-500">{item.description}</p>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-[#ecb840] transition-colors" />
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        {/* Footer */}
+        <div className="px-6 pb-6">
+          <p className="text-xs text-gray-600 text-center">
+            Stay tuned for our official merch drop!
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Home() {
+  const [isMerchModalOpen, setIsMerchModalOpen] = useState(false)
+
   return (
     <div className="min-h-screen flex flex-col bg-[#050301] text-white relative overflow-hidden">
       {/* Background */}
@@ -166,7 +274,7 @@ export default function Home() {
         <section className="px-6 pb-6 fade-in-up" style={{ animationDelay: '0.2s' }}>
           <div className="max-w-xl mx-auto">
             <a
-              href="https://darylblairgonzales.my.canva.site/clique-studio-vip-pass"
+              href="https://docs.google.com/vip-pass"
               target="_blank"
               rel="noopener noreferrer"
               className="block group"
@@ -240,6 +348,36 @@ export default function Home() {
                 </a>
               )
             })}
+            
+            {/* Merch Button */}
+            <button
+              onClick={() => setIsMerchModalOpen(true)}
+              className="block w-full group text-left"
+            >
+              <div 
+                className="relative overflow-hidden rounded-2xl transition-all duration-300 group-hover:scale-[1.02]"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(236, 184, 64, 0.12), rgba(236, 184, 64, 0.05))',
+                  border: '1px solid rgba(236, 184, 64, 0.4)',
+                  boxShadow: '0 4px 24px rgba(0, 0, 0, 0.4)',
+                }}
+              >
+                <div className="p-4 lg:p-5 flex items-center gap-3 lg:gap-4">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-[#ecb840]/20 flex items-center justify-center group-hover:bg-[#ecb840]/30 transition-colors flex-shrink-0">
+                    <ShoppingBag className="w-5 h-5 lg:w-6 lg:h-6 text-[#ecb840]" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base lg:text-lg font-semibold text-white group-hover:text-[#ecb840] transition-colors">
+                      Merch
+                    </h3>
+                    <p className="text-xs lg:text-sm text-gray-400 mt-0.5">Get official Clique Studio merchandise</p>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors flex-shrink-0">
+                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+                  </div>
+                </div>
+              </div>
+            </button>
           </div>
         </section>
 
@@ -384,6 +522,9 @@ export default function Home() {
           </p>
         </div>
       </footer>
+
+      {/* Merch Modal */}
+      <MerchModal isOpen={isMerchModalOpen} onClose={() => setIsMerchModalOpen(false)} />
     </div>
   )
 }
