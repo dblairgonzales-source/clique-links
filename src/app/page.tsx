@@ -42,9 +42,9 @@ const primaryLinks = [
 // Merch items for modal
 const merchItems = [
   {
-    title: 'Clique Shirt',
-    description: 'Get the official Clique Studio tee',
-    href: 'https://docs.google.com/merch-clique-shirt',
+    title: 'Clique "Culture in Motion" Shirt',
+    description: 'Get the Culture in Motion tee',
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLSfPoCfm5UyN1cBuApjWMBlAIo8hm_ZxDNU1JMGFa2rr9tjBIQ/viewform?usp=dialog',
   },
   {
     title: 'Coming Soon',
