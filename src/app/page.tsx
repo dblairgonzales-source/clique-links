@@ -34,7 +34,7 @@ const primaryLinks = [
   {
     title: 'Studio Rentals',
     description: 'Reserve our space for your next event',
-    href: 'https://clique-booking.vercel.app/,
+    href: 'https://clique-booking.vercel.app/',
     icon: Video,
   },
 ]
